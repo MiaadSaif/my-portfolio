@@ -95,11 +95,31 @@ class PageController extends Controller
 
                 ],
             ],
+             '6' => [
+                'desc' => 'Built using Laravel 8, AJAX, MySQL with Socket notifications, payment integration, and MOCI APIs.',
+                'images' => [
+
+                    asset('images/golang.png'),
+
+
+
+                ],
+            ],
+'8' => [
+                'desc' => 'Built using Laravel 8, AJAX, MySQL with Socket notifications, payment integration, and MOCI APIs.',
+                'images' => [
+
+                    asset('images/store.png'),
+
+
+
+                ],
+            ],
 
         ];
 
         if (!array_key_exists($id, $projects)) {
-            return response()->json(['error' => 'Project not found'], 404);
+            return response()->json(['error' => 'As Backend'], 404);
         }
 
         return response()->json($projects[$id]);
