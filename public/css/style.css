@@ -216,4 +216,32 @@ body {
   cursor: pointer;
 }
 
+#contact {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+
+}
+
+#contact .card {
+  background: linear-gradient(135deg, #2d004d, #150026);
+
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#contact .card:hover {
+  transform: translateY(-10px);
+}
+
+#contact .section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
 

@@ -47,6 +47,7 @@
   </div>
 </section>
 
+
       <!-- CTA buttons -->
      {{--  <div class="flex justify-center md:justify-start gap-4 mt-6">
         <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium shadow-lg">🚀 View My Work</a>
@@ -143,7 +144,13 @@
   </div>
 </section>
 
-
+<section id="contact">
+  <div class="card">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Email: <a href="mailto:miaad.alfarsi@hotmail.com" style="color: #FFD700;">miaad.alfarsi@hotmail.com</a></p>
+    <p>Phone: <span style="color: #FFD700;">98519577</span></p>
+  </div>
+</section>
 <div id="projectModal" class="modal" style="display:none;">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal()" style="cursor:pointer; font-size:24px; position:absolute; top:10px; right:15px;">&times;</span>
@@ -167,7 +174,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 
     fetch(`/project-details/${projectId}`)
       .then(response => {
-        if (!response.ok) throw new Error('Project not found');
+        if (!response.ok) throw new Error('Backend Development');
         return response.json();
       })
       .then(data => {
