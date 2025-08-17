@@ -48,10 +48,10 @@
 </section>
 
       <!-- CTA buttons -->
-      <div class="flex justify-center md:justify-start gap-4 mt-6">
+     {{--  <div class="flex justify-center md:justify-start gap-4 mt-6">
         <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium shadow-lg">🚀 View My Work</a>
         <a href="#contact" class="px-6 py-3 bg-gray-700 hover:bg-gray-800 rounded-lg font-medium">📩 Contact Me</a>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>

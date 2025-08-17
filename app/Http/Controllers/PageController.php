@@ -69,6 +69,18 @@ public function getProjectDetails($id)
 
             ],
         ],
+        '4' => [
+            'desc' => 'Built using Laravel 8, AJAX, MySQL with Socket notifications, payment integration, and MOCI APIs.',
+            'images' => [
+
+                asset('images/car/car.png'),
+                asset('images/car/car2.png'),
+
+
+
+
+            ],
+        ],
 
     ];
 
