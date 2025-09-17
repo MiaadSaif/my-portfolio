@@ -5,22 +5,41 @@ body {
   color: white;
 }
 
-.navbar {
+/* Navbar Container */
+.navbar-container {
   display: flex;
   justify-content: center;
+  padding: 20px 0;
+  background: #0f001f;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
   gap: 20px;
-  padding: 15px;
-  background: #1a0033;
+  background-color: #3b024c; /* Dark navy */
+  padding: 12px 24px;
+  border-radius: 50px; /* Rounded pill shape */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .navbar a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.navbar a:hover {
+  background-color: #e8e6e1;
+  color: #1e293b;
+}
+
 .hero {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* <- forces stacked layout */
   align-items: center;
   text-align: center;
   padding: 100px 20px;
@@ -28,6 +47,7 @@ body {
   background-color: #0b011e;
   font-family: 'Poppins', sans-serif;
 }
+
 
 .hero-img-container {
   position: relative;
@@ -123,47 +143,86 @@ body {
 
 
 /* Card style */
-.card {
-  background: linear-gradient(135deg, #2d004d, #150026);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  text-align: center;
-  max-width: 600px;
-  color: #fff;
-  transition: transform 0.3s;
+/* General Cards (applies to Work, Projects, About, Contact, Services) */
+.card,
+.service-card,
+.project-card {
+  background: #0b011e;
+  border: 1px solid #1a0033;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover,
+.service-card:hover,
+.project-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
-/* Title style */
-.card .section-title {
+/* Grid layout for cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Icons inside cards */
+.card .icon,
+.service-card .icon {
+  font-size: 40px;
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+/* Card Titles */
+.card h2,
+.card h3,
+.service-card h3,
+.project-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+/* Card Text */
+.card p,
+.service-card p,
+.project-card p {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Read More Links */
+.read-more {
+  font-size: 14px;
+  font-weight: 500;
+  color: #00bfff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 16px;
   color: #fff;
-  position: relative;
 }
 
-.card .section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #ff6fff;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
-/* Paragraph */
-.card p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #ddd;
-
-}
  .modal {
     position: fixed;
     top: 0; left: 0;
@@ -244,4 +303,132 @@ body {
   margin-bottom: 20px;
 }
 
+
+.skill-card p {
+  font-size: 14px;   /* بدّل الرقم حسب الحجم اللي تحبه */
+  line-height: 1.5;  /* يخلي النص مرتب أكثر */
+}
+
+.skill-card h3 {
+  font-size: 16px;   /* لتصغير العناوين */
+}
+.card p,
+.card ul,
+.card li {
+  font-size: 14px;
+}
+.row {
+  display: flex;       /* Make columns horizontal */
+  gap: 10px;           /* Optional spacing between columns */
+}
+
+.column {
+  flex: 1;             /* Each column takes equal width */
+  color: white;
+  text-align: center;
+}
+.modal-content {
+  background: #1a1a1a;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#modal-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#modal-images img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#modal-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+.has-images {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: black;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* الحالة المكتملة */
+.status-tag-completed {
+  display: inline-block;
+  background-color: #6fd884;
+  color: #1a3e2c;
+  font-size: 10PX; /* 14px */
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 0 2px rgba(111, 216, 132, 0.2);
+}
+
+/* الحالة الجارية */
+.status-tag-ongoing {
+  display: inline-block;
+  background-color: #d72c35;
+  color: #fff;
+  font-size: 10PX; /* 14px */
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 0 2px rgba(215, 44, 53, 0.2);
+}
+
+/* Fullscreen image viewer (lightbox style) */
+#imageViewer {
+  display: none;
+  position: fixed;
+  z-index: 99999; /* تأكد أنها أعلى من كل العناصر */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+#imageViewer img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00bcd4;
+  z-index: 999999;
+}
+
+#imageViewer .close-image {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 999999;
+}
 
